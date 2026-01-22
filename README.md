@@ -149,7 +149,7 @@ Dashboard, Reports & Heatmaps
 
 | Layer        | Technologies                     |
 | ------------ | -------------------------------- |
-| Frontend     | React, Vite                      |
+| Frontend     | React, Next                      |
 | Backend      | Flask (Microservices)            |
 | AI           | Google Vision OCR, Gemini 2.0    |
 | Web Crawling | Selenium, BeautifulSoup          |
@@ -265,7 +265,7 @@ MetaMark includes a **Meta-Token–based reward mechanism** to drive **user enga
 
 ---
 
-## 📚 Demo -
+## 📚 Demo 
 
 * 🎥 **Live Demo:** [https://youtu.be/xZJdHqtpcVk](https://youtu.be/xZJdHqtpcVk)
 
@@ -277,6 +277,4 @@ MetaMark includes a **Meta-Token–based reward mechanism** to drive **user enga
 Smart India Hackathon 2025
 
 ---
-* Create **architecture diagrams**
 
-Just say 🚀
