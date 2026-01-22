@@ -195,17 +195,17 @@ MetaMark uniquely combines **physical verification hardware** with AI.
 ### 🔹 Compliance Dashboard
 ![Compliance Dashboard](docs/screenshots/Dashboard.png)
 
-### 🔹 AI Compliance Analysis – Demo 1
+### 🔹 AI Compliance Analysis -
 ![Demo 1](docs/screenshots/demo1.png)
 
-### 🔹 AI Compliance Analysis – Demo 2
+### 🔹 AI Compliance Analysis -
 ![Demo 2](docs/screenshots/demo2.png)
 
-### 🔹 AI Compliance Analysis – Demo 3
+### 🔹 AI Compliance Analysis -
 ![Demo 3](docs/screenshots/demo3.png)
 
 ### 🔹 Hardware Prototype (Sensor-Based Verification)
-![Hardware Prototype](docs/screenshots/hardwaredemo.jpg)
+![Hardware Prototype](docs/screenshots/hardwaredemo.jpeg)
 
 
 
