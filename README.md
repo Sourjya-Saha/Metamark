@@ -4,7 +4,8 @@
 
 ## AI-Driven Automated Legal Metrology Compliance Checker
 
-**Smart India Hackathon 2025 Winners | Team Code Nirvana**
+**Smart India Hackathon 2025 – Winning Solution**
+**Team Code Nirvana**
 
 ---
 
@@ -12,7 +13,7 @@
 
 **MetaMark** is an **AI-driven, hardware-assisted compliance verification system** designed to automatically validate **Legal Metrology declarations on e-commerce platforms**.
 
-The system combines **Vision AI, LLM reasoning, cloud microservices, and IoT-based hardware validation** to detect misleading packaging, incorrect declarations, and regulatory violations—**before products go live** on marketplaces.
+The platform combines **Vision AI, Large Language Model (LLM) reasoning, cloud-native microservices, and IoT-based physical verification hardware** to detect misleading packaging, incorrect declarations, and regulatory violations **before products are published on marketplaces**.
 
 > 🏛️ **Problem Statement ID:** SIH25057
 > 🏢 **Ministry:** Consumer Affairs, Food & Public Distribution
@@ -25,25 +26,26 @@ The system combines **Vision AI, LLM reasoning, cloud microservices, and IoT-bas
 
 E-commerce platforms face persistent challenges such as:
 
-* Incorrect MRP, quantity, origin, and expiry declarations
+* Incorrect or missing declarations (MRP, quantity, origin, expiry)
 * Fake labels, overwritten MRPs, and misleading packaging
-* Manual audits that are slow, costly, and error-prone
-* Lack of real-time, audit-ready compliance insights
+* Manual audits that are slow, expensive, and error-prone
+* Lack of real-time, audit-ready compliance visibility
+* Limited physical verification of listed products
 
-**MetaMark solves this by enforcing compliance through automation, AI reasoning, and sensor-based physical validation.**
+**MetaMark addresses these challenges by automating compliance enforcement using AI-based reasoning and sensor-driven physical validation.**
 
 ---
 
 ## 💡 Solution Summary
 
-MetaMark provides:
+MetaMark delivers an **end-to-end automated compliance pipeline** that provides:
 
-* **Automated label extraction** from product images
-* **AI-driven compliance validation** against Legal Metrology rules
-* **Confidence-weighted compliance scoring**
-* **Auto-generated violation explanations & remediation**
-* **Hardware-assisted physical verification**
-* **Audit-ready, traceable compliance reports**
+* Automated extraction of legal declarations from product images
+* AI-driven validation against Legal Metrology rules
+* Confidence-weighted compliance scoring
+* Auto-generated violation explanations and remediation steps
+* Hardware-assisted physical verification of product attributes
+* Transparent, audit-ready compliance reports
 
 ---
 
@@ -68,10 +70,8 @@ Compliance Score + Violations
 Pre-Upload Validation / Audit Engine
        │
        ▼
-Dashboard + Reports + Heatmaps
+Dashboard, Reports & Heatmaps
 ```
-
-*(Derived from Level-1 & Level-2 process flow diagrams in the PPT)* 
 
 ---
 
@@ -80,8 +80,14 @@ Dashboard + Reports + Heatmaps
 ### 🔍 AI-Based Label & Declaration Analysis
 
 * Multilingual OCR using **Google Vision**
-* Object detection (bottles, packets, containers)
-* Extracts **25+ legal attributes** (MRP, weight, origin, expiry, etc.)
+* Object detection for packaging types (bottles, packets, containers)
+* Automatic extraction of **25+ legal attributes**, including:
+
+  * MRP
+  * Net quantity
+  * Manufacturer details
+  * Country of origin
+  * Expiry and batch information
 
 ---
 
@@ -89,42 +95,51 @@ Dashboard + Reports + Heatmaps
 
 * Uses **Gemini 2.0** for:
 
-  * Rule interpretation
+  * Legal rule interpretation
   * Violation reasoning
-  * Actionable remediation suggestions
-* Dynamically adapts to **updated Legal Metrology rules**
+  * Context-aware remediation suggestions
+* Automatically adapts to **updated Legal Metrology regulations**
+* Eliminates dependency on hard-coded rule engines
 
 ---
 
 ### 📊 Confidence-Weighted Compliance Scoring
 
-* Combines:
+* Final compliance score is computed using:
 
   * OCR confidence
-  * Semantic correctness
+  * Semantic accuracy of extracted data
 * Outputs:
 
-  * Final compliance grade (A+, A, B…)
-  * Violation breakdown
+  * Compliance grades (A+, A, B, etc.)
+  * Detailed violation breakdown
+  * Explanation-backed decision trail
 
 ---
 
 ### 🚦 Pre-Upload Validation Engine
 
-* Prevents non-compliant listings **before publication**
-* Reduces delisting cost & manual audits
-* Generates readiness scores for sellers
+* Validates listings **before they go live**
+* Reduces:
+
+  * Delisting costs
+  * Manual review overhead
+* Provides sellers with **readiness scores and fix suggestions**
 
 ---
 
 ### 🌍 Real-Time Compliance Heatmap
 
-* Tracks compliance across:
+* Tracks compliance trends across:
 
   * Manufacturers
   * Importers
   * Packers
-* Identifies repeat offenders & systemic issues
+* Identifies:
+
+  * Repeat violators
+  * High-risk entities
+  * Systemic compliance gaps
 
 ---
 
@@ -132,15 +147,15 @@ Dashboard + Reports + Heatmaps
 
 ### 🧩 Software Stack
 
-| Layer     | Technologies                     |
-| --------- | -------------------------------- |
-| Frontend  | React, Vite                      |
-| Backend   | Flask (Microservices)            |
-| AI        | Google Vision OCR, Gemini 2.0    |
-| Scraping  | Selenium, BeautifulSoup          |
-| Database  | MySQL                            |
-| Cloud     | AWS / GCP, S3                    |
-| Analytics | Python (Statistical Aggregation) |
+| Layer        | Technologies                     |
+| ------------ | -------------------------------- |
+| Frontend     | React, Vite                      |
+| Backend      | Flask (Microservices)            |
+| AI           | Google Vision OCR, Gemini 2.0    |
+| Web Crawling | Selenium, BeautifulSoup          |
+| Database     | MySQL                            |
+| Cloud        | AWS / GCP, S3                    |
+| Analytics    | Python (Statistical Aggregation) |
 
 ---
 
@@ -148,120 +163,110 @@ Dashboard + Reports + Heatmaps
 
 1. **Dynamic Web Crawler**
 
-   * Scrapes live e-commerce listings
+   * Extracts live e-commerce listings and metadata
 2. **Vision AI OCR**
 
-   * Extracts text + visual cues
+   * Extracts textual and visual label information
 3. **LLM Compliance Engine**
 
-   * Validates against metrology rules
+   * Validates data against legal metrology rules
 4. **Auto-Remediation Engine**
 
-   * Maps violations → fixes
+   * Maps violations to actionable fixes
 5. **Scoring & Reporting**
 
-   * Generates audit-ready reports
+   * Generates explainable, audit-ready reports
 
 ---
 
 ## 🧪 Hardware Innovation (Key Differentiator)
 
-MetaMark uniquely combines **physical verification hardware** with AI.
+MetaMark uniquely integrates **sensor-based physical verification** with AI-driven digital compliance.
 
 ### 🔩 Hardware Components
 
-| Module            | Purpose                          |
-| ----------------- | -------------------------------- |
-| TOF Sensor        | Measures package dimensions      |
-| Load Cell + HX711 | Weight verification              |
-| MPU6050           | Motion & vibration analysis      |
-| UV + IR Scanner   | Detects fake labels & overwrites |
-| ESP32 + BLE       | Low-power communication          |
+| Module            | Purpose                                     |
+| ----------------- | ------------------------------------------- |
+| TOF Sensor        | Measures real-world package dimensions      |
+| Load Cell + HX711 | Accurate weight verification                |
+| UV + IR Scanner   | Detects fake labels, overwrites & tampering |
+| ESP32 + BLE       | Low-power wireless communication            |
 
 ---
 
 ### 📦 Hardware Capabilities
 
-* Detects **under-filled packages**
-* Identifies **fake holograms & reprinted expiry**
-* Verifies **declared vs actual weight & volume**
-* Portable, **mobile-mountable design**
-
+* Detects **under-filled or adulterated products**
+* Identifies **fake holograms, expiry reprints, and MRP tampering**
+* Verifies **declared vs actual weight and volume**
+* Portable, **mobile-mountable modular architecture**
+* Low-cost, scalable, and manufacturable design
 
 ---
 
 ## 🖼️ Screenshots & Prototype
 
 ### 🔹 Compliance Dashboard
+
 ![Compliance Dashboard](docs/screenshots/Dashboard.png)
 
-### 🔹 AI Compliance Analysis -
+### 🔹 AI Compliance Analysis
+
 ![Demo 1](docs/screenshots/demo1.png)
-
-### 🔹 AI Compliance Analysis -
 ![Demo 2](docs/screenshots/demo2.png)
-
-### 🔹 AI Compliance Analysis -
 ![Demo 3](docs/screenshots/demo3.png)
 
 ### 🔹 Hardware Prototype (Sensor-Based Verification)
+
 ![Hardware Prototype](docs/screenshots/hardwaredemo.jpeg)
 
+---
 
+## 🪙 Meta-Token Reward System (User Incentive & Engagement)
 
+MetaMark includes a **Meta-Token–based reward mechanism** to drive **user engagement, adoption, and retention**.
+
+### 🔁 Process & Concept
+
+* **Meta-Tokens (MT)** are MetaMark’s **native reward exchange tokens**
+* Users earn MT tokens when they:
+
+  1. Generate a **compliance report**
+  2. Access **affiliate links** to partner e-commerce platforms
+  3. Successfully purchase products via those links
+* Tokens earned are **proportional to product value**
 
 ---
 
-## 📈 Impact & Benefits
+### 🎁 Token Collection & Redemption
 
-### 👥 Social Impact
+* Meta-Tokens can be:
 
-* Strengthens seller accountability
-* Protects consumers from misleading packaging
-* Improves trust in Indian e-commerce
+  * Accumulated over time
+  * Redeemed for **real-balance gift cards** on e-commerce platforms
+* Tokens are redeemable in **fixed slabs**:
 
-### 💰 Economic Impact
+  * `10 MT`
+  * `20 MT`
+  * `90 MT`
+* Fixed tiers:
 
-* Reduces manual compliance costs
-* Prevents costly delistings
-* Scales efficiently via batch processing
-
-### 🌱 Environmental Impact
-
-* Reduces packaging waste
-* Minimizes physical audits
-* Lowers carbon footprint
+  * Encourage faster redemption
+  * Increase repeat engagement
 
 ---
 
-## 🧪 Feasibility & Risk Mitigation
+### 🚀 Platform Benefits
 
-### Challenges
-
-* Complex AI-hardware integration
-* Cloud & API costs
-* Seller adoption resistance
-
-### Mitigations
-
-* Modular microservices
-* Hybrid AI pipelines with caching
-* Explainable AI dashboards
+* Boosts repeat usage and referrals
+* Improves compliance-aware purchasing behavior
+* Increases user trust and platform engagement
+* Creates a sustainable incentive loop
 
 ---
 
-## 🪙 Meta-Token Reward System (Future Scope)
+## 📚 Demo -
 
-* Users earn **Meta-Tokens** via affiliate purchases
-* Tokens redeemable for gift cards
-* Improves adoption & retention
-
----
-
-## 📚 Research References
-
-* *Large Scale Generative Multimodal Attribute Extraction* — Khandelwal et al., 2023
-* *Automating Compliance Evidence Extraction with ML* — Olatunji et al., 2025
 * 🎥 **Live Demo:** [https://youtu.be/xZJdHqtpcVk](https://youtu.be/xZJdHqtpcVk)
 
 ---
@@ -272,3 +277,6 @@ MetaMark uniquely combines **physical verification hardware** with AI.
 Smart India Hackathon 2025
 
 ---
+* Create **architecture diagrams**
+
+Just say 🚀
