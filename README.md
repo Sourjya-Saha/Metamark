@@ -1,20 +1,10 @@
-Got it 👍
-Below is a **complete, production-grade, SIH-ready README** created **directly from your PPT/PDF content**, covering **architecture, AI pipeline, hardware, workflows, screenshots, feasibility, impact, and references**.
 
-This README is written exactly how **top hackathon + open-source projects** present themselves.
-You can **copy-paste this entire content into `README.md`**.
-
-I’ve also clearly marked where to place **screenshots** and how to structure them.
-
-> 📌 **Source**: This README is derived from your official SIH 2025 submission PPT & PDF 
-
----
 
 # 🏷️ MetaMark
 
 ## AI-Driven Automated Legal Metrology Compliance Checker
 
-**Smart India Hackathon 2025 | Team Code Nirvana**
+**Smart India Hackathon 2025 Winners | Team Code Nirvana**
 
 ---
 
@@ -197,39 +187,28 @@ MetaMark uniquely combines **physical verification hardware** with AI.
 * Verifies **declared vs actual weight & volume**
 * Portable, **mobile-mountable design**
 
-*(Based on Hardware Innovation slides)* 
 
 ---
 
 ## 🖼️ Screenshots & Prototype
 
-> 📂 Place images inside `docs/screenshots/`
-
-### 🔹 E-Commerce Product Page
-
-```md
-![Product Listing](docs/screenshots/product_ecom.png)
-```
-
-### 🔹 MetaMark Browser Extension
-
-```md
-![Extension Score](docs/screenshots/extension_score.png)
-```
-
 ### 🔹 Compliance Dashboard
+![Compliance Dashboard](docs/screenshots/Dashboard.png)
 
-```md
-![Dashboard](docs/screenshots/dashboard.png)
-```
+### 🔹 AI Compliance Analysis – Demo 1
+![Demo 1](docs/screenshots/demo1.png)
 
-### 🔹 Detailed Violation Report
+### 🔹 AI Compliance Analysis – Demo 2
+![Demo 2](docs/screenshots/demo2.png)
 
-```md
-![Compliance Report](docs/screenshots/compliance_report.png)
-```
+### 🔹 AI Compliance Analysis – Demo 3
+![Demo 3](docs/screenshots/demo3.png)
 
-*(Screens derived from Maggie & Pringles demo in PPT)* 
+### 🔹 Hardware Prototype (Sensor-Based Verification)
+![Hardware Prototype](docs/screenshots/hardwaredemo.jpg)
+
+
+
 
 ---
 
