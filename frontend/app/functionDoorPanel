@@ -1,0 +1,198 @@
+const DoorPanelIntro = ({ onComplete }) => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(-1);
+  const [showDoors, setShowDoors] = useState(true);
+  const [showLastWord, setShowLastWord] = useState(true);
+  
+  const words = ['Compliance', 'Verification', 'Integrity'];
+  
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    
+    setShowDoors(true);
+    
+    // Timing constants for perfect synchronization
+    const DOOR_OPEN_DELAY = 400;
+    const DOOR_ANIMATION_DURATION = 6100;
+    const FIRST_WORD_DELAY = 800;
+    const WORD_DISPLAY_DURATION = 2000;
+    const LAST_WORD_EXIT_DURATION = 700; // Duration of exit animation
+    
+    const lastWordStartTime = FIRST_WORD_DELAY + (WORD_DISPLAY_DURATION * (words.length - 1));
+    
+    // Start first word
+    const firstWordTimer = setTimeout(() => {
+      setCurrentWordIndex(0);
+    }, FIRST_WORD_DELAY);
+
+    // Cycle through words (except the last one)
+    const wordTimer = setInterval(() => {
+      setCurrentWordIndex((prev) => {
+        if (prev < words.length - 1) {
+          return prev + 1;
+        }
+        return prev;
+      });
+    }, WORD_DISPLAY_DURATION);
+
+    // Stop word cycling after all words shown
+    const stopWordTimer = setTimeout(() => {
+      clearInterval(wordTimer);
+    }, lastWordStartTime);
+
+    // Trigger last word exit animation
+    const triggerLastWordExit = setTimeout(() => {
+      setShowLastWord(false);
+    }, lastWordStartTime + WORD_DISPLAY_DURATION);
+
+    return () => {
+      clearTimeout(firstWordTimer);
+      clearTimeout(stopWordTimer);
+      clearTimeout(triggerLastWordExit);
+      clearInterval(wordTimer);
+      document.body.style.overflow = 'unset';
+    };
+  }, [onComplete]);
+
+  // Called when the last word's exit animation completes
+  const handleLastWordExitComplete = () => {
+    document.body.style.overflow = 'unset';
+    onComplete(); // Load landing page
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ 
+        duration: 0.8, 
+        ease: [0.33, 1, 0.68, 1]
+      }}
+      className="fixed inset-0 z-[100] bg-black overflow-hidden"
+      style={{
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+        WebkitFontSmoothing: 'antialiased'
+      }}
+    >
+      {/* Top Door Panel */}
+      <motion.div
+        initial={{ height: '47.5%' }}
+        animate={{ height: showDoors ? '0%' : '47.5%' }}
+        transition={{ 
+          duration: 6.1,
+          ease: [0.25, 0.1, 0.25, 1],
+          delay: 0.4
+        }}
+        className="absolute top-0 left-0 right-0 overflow-hidden"
+        style={{
+          background: 'linear-gradient(180deg, #A855F7 0%, #E879F9 30%, #F472B6 60%, #EC4899 100%)',
+          boxShadow: '0 2px 12px rgba(168, 85, 247, 0.3)',
+          willChange: 'height',
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
+      />
+
+      {/* Bottom Door Panel */}
+      <motion.div
+        initial={{ height: '47.5%' }}
+        animate={{ height: showDoors ? '0%' : '47.5%' }}
+        transition={{ 
+          duration: 6.1,
+          ease: [0.25, 0.1, 0.25, 1],
+          delay: 0.4
+        }}
+        className="absolute bottom-0 left-0 right-0 overflow-hidden"
+        style={{
+          background: 'linear-gradient(0deg, #A855F7 0%, #E879F9 30%, #F472B6 60%, #EC4899 100%)',
+          boxShadow: '0 -2px 12px rgba(168, 85, 247, 0.3)',
+          willChange: 'height',
+          transform: 'translateZ(0)',
+          backfaceVisibility: 'hidden'
+        }}
+      />
+
+      {/* Animated Words */}
+      <div className="absolute inset-0 flex items-center justify-center px-4">
+        <AnimatePresence 
+          mode="wait"
+          onExitComplete={() => {
+            // Only trigger complete when it's the last word exiting
+            if (currentWordIndex === words.length - 1 && !showLastWord) {
+              handleLastWordExitComplete();
+            }
+          }}
+        >
+          {currentWordIndex >= 0 && showLastWord && (
+            <motion.div
+              key={currentWordIndex}
+              initial={{ opacity: 0, y: 80, filter: 'blur(15px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, y: -80, filter: 'blur(15px)' }}
+              transition={{ 
+                duration: 0.7, 
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold"
+              style={{
+                lineHeight: '1.2',
+                paddingBottom: '0.1em',
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden',
+                WebkitFontSmoothing: 'antialiased',
+                willChange: 'transform, opacity, filter'
+              }}
+            >
+              <div 
+                className="flex" 
+                style={{ 
+                  letterSpacing: '-0.02em',
+                  overflow: 'visible'
+                }}
+              >
+                {words[currentWordIndex].split('').map((letter, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.1 + (index * 0.08),
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
+                    style={{
+                      background: 'linear-gradient(135deg, #A855F7 0%, #E879F9 25%, #F472B6 50%, #EC4899 75%, #A855F7 100%)',
+                      backgroundSize: '200% 200%',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                      animation: 'gradientShift 3s ease infinite',
+                      willChange: 'transform, opacity, filter',
+                      display: 'inline-block',
+                      verticalAlign: 'baseline',
+                      transform: 'translateZ(0)',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                      WebkitFontSmoothing: 'antialiased'
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <style jsx>{`
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+      `}</style>
+    </motion.div>
+  );
+};
